@@ -7,13 +7,14 @@ output: slidy_presentation
 
 ## Introduction
 
+- What is Markdown?
+    - Simple Intro
 - Pandoc
-- GitHub Pages
-    - Jekyll
 - Rmarkdown
     - PDFs
     - Interactive Slides
-- Document Management
+- GitHub Pages
+    - Jekyll
 
 ## What is Markdown?
 
@@ -230,7 +231,6 @@ The key difference in Rmarkdown is in the codeblock, which actually executes cod
 We've already seen the `eval=TRUE` option for the R codeblock. But [there are lots of others](http://rmarkdown.rstudio.com/authoring_rcodechunks.html):
 
 * `echo=FALSE`
-* `results='asis'`
 * `fig.size=5`
 * `message=FALSE`
 * `tidy=TRUE`
@@ -238,7 +238,11 @@ We've already seen the `eval=TRUE` option for the R codeblock. But [there are lo
 
 ## Rstudio and Pandoc
 
-RStudio actually has pandoc built in, with a limited set of options. If you want your markdown to execute code, you will have to use this version of pandoc.
+RStudio actually has pandoc built in, with a limited set of options. If you want your markdown to execute code, you will have to use this version of pandoc. I usually just use Rstudio's "Knit" option to translate my documents.
+
+You can also use the following command to render a document. Make sure your YAML specifies the options.
+
+`rmarkdown::render("input.Rmd")`
 
 ## Rstudio/Markdown Example:
 
@@ -246,7 +250,11 @@ Open this file in RStudio: http://github.com/laderast/magic-of-markdown/Rmarkdow
 
 ## Shiny and Rmarkdown
 
-What's especially cool is that you can mix Shiny and Rmarkdown to produce interactive slides. I'm experimenting with this here: http://church.ohsu.edu:3838/laderast/clusteringLecture/
+What's especially cool is that you can mix Shiny and Rmarkdown to produce interactive slides. 
+
+You can embed Shiny applications into code blocks and then run the resulting code on a Shiny server, such as the one available on church.
+
+I'm experimenting with this here: http://church.ohsu.edu:3838/laderast/clusteringLecture/
 
 
 ## GitHub Pages
