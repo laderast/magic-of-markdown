@@ -204,35 +204,6 @@ What about equations and all the other jazz? You can integrate LaTeX equations i
 
 Markdown works well with Zotero, using the pandoc-citeproc extension: https://github.com/jgm/pandoc-citeproc
 
-## GitHub Pages
-
-A nice use of Markdown is for authoring websites. You can do this with GitHub pages.
-
-GitHub Pages uses an HTML translation engine called *Jekyll*, which is written in Ruby to translate Markdown into HTML. You don't really need to know about it, unless you want to use the templating in Jekyll to build something like a blog.
-
-The one benefit to using Jekyll is that it's a relatively lightweight way to manage a blog without a more complicated, database-using, content management system. Because of this, it's relatively portable and you can easily take your documents with you if you decide to migrate to another system.
-
-## Markdown and GitHub pages
-
-Any markdown file that has an .markdown or .md extension will automatically be processed by GitHub and served as a webpage. Any file within a directory called `index.md` will be served as the homepage for that directory.
-
-If you want to make a webpage for your package, you need to create a branch called `gh-pages` and put the markdown files in there. I believe you can also just place html files as well.
-
-## Setting Up a Personal GitHub Page
-
-If you have a GitHub account with USERNAME, you can serve a webpage directly from USERNAME.github.io. For example: http://laderast.github.io
-
-You first need to create a repository with that name. Anything with index.md will be automatically translated and served as a webpage.
-
-Using Jekyll, you can add header and footers and other templating features, standardizing the look of your pages as you like.
-
-One thing to remember is when your output is html, you can embed HTML tags, which is especially useful for embedding images, since you can adjust image size directly within the tag.
-
-## Jekyll File Structure
-
-If you're interested in setting up a blog or more complicated site, you'll have to learn a little bit about Jekyll and the [liquid templating](http://jekyllrb.com/docs/templates/) language.
-
-You can download Jekyll by itself to see how it transforms markdown files, but to get started with a blog or pages, it's actually way easier to [clone Poole](https://github.com/poole/poole), which gives you the basic file structure that you can use to serve the GitHub pages.
 
 
 ## Rmarkdown
@@ -269,13 +240,50 @@ We've already seen the `eval=TRUE` option for the R codeblock. But [there are lo
 
 RStudio actually has pandoc built in, with a limited set of options. If you want your markdown to execute code, you will have to use this version of pandoc.
 
+## Rstudio/Markdown Example:
+
+Open this file in RStudio: http://github.com/laderast/magic-of-markdown/Rmarkdown-example.Rmd
+
 ## Shiny and Rmarkdown
 
 What's especially cool is that you can mix Shiny and Rmarkdown to produce interactive slides. I'm experimenting with this here: http://church.ohsu.edu:3838/laderast/clusteringLecture/
+
+
+## GitHub Pages
+
+A nice use of Markdown is for authoring websites. You can do this with GitHub pages.
+
+GitHub Pages uses an HTML translation engine called *Jekyll*, which is written in Ruby to translate Markdown into HTML. You don't really need to know about it, unless you want to use the templating in Jekyll to build something like a blog.
+
+The one benefit to using Jekyll is that it's a relatively lightweight way to manage a blog without a more complicated, database-using, content management system. Because of this, it's relatively portable and you can easily take your documents with you if you decide to migrate to another system.
+
+## Markdown and GitHub pages
+
+Any markdown file that has an .markdown or .md extension will automatically be processed by GitHub and served as a html. For example: https://github.com/laderast/magic-of-markdown/blob/master/magic-of-markdown.md
+
+If you want to make a webpage for your code, you need to create a branch called `gh-pages` and put the markdown files in there. I believe you can also just place html files as well.
+
+## Setting Up a Personal GitHub Page
+
+If you have a GitHub account with USERNAME, you can serve a webpage directly from USERNAME.github.io. For example: http://laderast.github.io
+
+You first need to create a repository with that name. Anything with index.md will be automatically translated and served as a webpage.
+
+Using Jekyll, you can add header and footers and other templating features, standardizing the look of your pages as you like.
+
+One thing to remember is when your output is html, you can embed HTML tags, which is especially useful for embedding images, since you can adjust image size directly within the tag.
+
+## Jekyll File Structure
+
+If you're interested in setting up a blog or more complicated site, you'll have to learn a little bit about Jekyll and the [liquid templating](http://jekyllrb.com/docs/templates/) language.
+
+You can download Jekyll by itself to see how it transforms markdown files, but to get started with a blog or pages, it's actually way easier to [clone Poole](https://github.com/poole/poole), which gives you the basic file structure that you can use to serve the GitHub pages.
+
 
 ## For More Info
 
 This document: http://github.com/laderast/magic-of-markdown/
 Pandoc user guide: http://pandoc.org/README.html
-GitHub Pages: https://pages.github.com
 Rmarkdown: http://rmarkdown.rstudio.com
+Rmarkdown and Shiny: http://rmarkdown.rstudio.com/authoring_shiny_widgets.html
+GitHub Pages: https://pages.github.com
