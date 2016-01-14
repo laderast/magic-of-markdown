@@ -1,0 +1,44 @@
+---
+title: "Rmarkdown example"
+author: "Ted Laderas"
+date: "January 14, 2016"
+output: html_document
+---
+
+This is an example Rmarkdown report. Open this file up in RStudio and try using different versions of the "Knit" command in the tool bar. 
+
+The first thing to note is that the workspace for the Rmarkdown document starts completely empty. Rmarkdown's workspace is not your current workspace.
+
+```{r}
+data(iris)
+#produce an xy plot of the iris data
+plot(x=iris$Sepal.Width, y=iris$Sepal.Length,col=iris$Species)
+
+#save species to a new varaible
+Spec <- iris$Species
+```
+
+Note that objects that you create in one codeblock persist to the next:
+
+```{r}
+table(Spec)
+```
+
+Here's an example of displaying tables. You can import the the knitr library and use the kable function to make your tables look prettier.
+
+```{r}
+#standard formatting of table
+iris[1:10,]
+```
+
+```{r}
+library(knitr)
+#kable formatting
+kable(iris[1:10,])
+```
+
+You can even put in-line code in your report. For example, I can say there are `r nrow(iris)` rows in the Iris dataset. This is great in you can regenerate a report if the underlying data has changed, or you reprocess it.
+
+Here's an example of an equation using LaTeX:
+
+$$ \frac{1}{n} \sum_{i=1}^{n} x_{i} $$
