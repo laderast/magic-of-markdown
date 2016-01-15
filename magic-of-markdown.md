@@ -1,6 +1,6 @@
 ---
 title: "The Magic of Markdown"
-author: "Ted Laderas"
+author: "Ted Laderas (laderast@ohsu.edu)"
 date: "January 13, 2016"
 output: slidy_presentation
 ---
