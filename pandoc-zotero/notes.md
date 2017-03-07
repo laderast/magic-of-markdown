@@ -52,7 +52,5 @@ pandoc --filter pandoc-citeproc notes.md -o notes.docx
 
 Zotero: https://www.zotero.org
 Better BibTex Installation: https://github.com/retorquere/zotero-better-bibtex/wiki/Installation
-
 This page helped me set up Zotero to work with pandoc: http://verifyandrepair.com/04-13-2016/citations-export-preview/
-
 This is a page for Citation Style Language (CSL) files: http://citationstyles.org
