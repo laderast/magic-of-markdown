@@ -2,7 +2,7 @@
 title: "The Magic of Markdown"
 author: "Ted Laderas (laderast@ohsu.edu)"
 date: "January 13, 2016"
-output: slidy_presentation
+output: beamer_presentation
 ---
 
 ## Introduction
@@ -28,7 +28,7 @@ You can worry about translating the markdown to other formats later, which is ha
 
 Markdown was originally made to be a substitute for HTML in forums. The original implementation doesn't really cover formatting such as tables.
 
-GitHub also uses their own flavor of Markdown (called GitHub markdown) as the main format for their webpages, which makes maintaining them much easier than having to edit raw HTML. They extended markdown so you can add tables and better code formatting. 
+GitHub also uses their own flavor of Markdown (called GitHub markdown) as the main format for their webpages, which makes maintaining them much easier than having to edit raw HTML. They extended markdown so you can add tables and better code formatting.
 
 A variation of GitHub markdown is Rmarkdown, which is Markdown + R. Rmarkdown is really useful for reproducible analyses, and it can also be used in conjunction with Shiny to make interactive slides.
 
@@ -58,7 +58,7 @@ When in doubt, look at this quick [markdown cheat sheet](https://enterprise.gith
 1. Numbered Lists
 2. Another Number
 ```   
-    
+
 1. Numbered Lists
 2. Another Number
 
@@ -185,14 +185,13 @@ output: slidy_presentation
 ---
 ```
 
-*'YAML ain't markup language' - har har.
+* 'YAML ain't markup language' - har har.
 
 ## Formatting Templates
 
 If you're not satisfied with the default look of the output, you can customize the different documents using various templates.
 
 [Pandoc Templates](https://github.com/kjhealy/pandoc-templates)
-
 
 ## Markdown and LaTeX
 
@@ -205,7 +204,7 @@ What about equations and all the other jazz? You can integrate LaTeX equations i
 
 Markdown works well with Zotero, using the pandoc-citeproc extension: https://github.com/jgm/pandoc-citeproc
 
-
+I've written a tiny example with installation instructions here: [Using Zotero with Pandoc](pandoc-zotero/notes.md)
 
 ## Rmarkdown
 
@@ -228,7 +227,7 @@ The key difference in Rmarkdown is in the codeblock, which actually executes cod
 
 ## Lots of codeblock options
 
-We've already seen the `eval=TRUE` option for the R codeblock. But [there are lots of others](http://rmarkdown.rstudio.com/authoring_rcodechunks.html):
+We've already seen the `eval=TRUE` option for the R codeblock. But [there are lots of others](http://rmarkdown.rstudio.com/authoring_rcodechunks.html) to help you customize your presentation of code and graphs:
 
 * `echo=FALSE`
 * `fig.size=5`
@@ -240,7 +239,7 @@ We've already seen the `eval=TRUE` option for the R codeblock. But [there are lo
 
 RStudio actually has pandoc built in, with a limited set of options. If you want your markdown to execute code, you will have to use this version of pandoc. I usually just use Rstudio's "Knit" option to translate my documents.
 
-You can also use the following command to render a document. Make sure your YAML specifies the options.
+You can also use the following command to render a document. Make sure your YAML specifies the options you want (i.e. PDF, html_output). Note that to output PDF filese, you will have to install LaTeX on your system.
 
 `rmarkdown::render("input.Rmd")`
 
@@ -250,7 +249,7 @@ Open this file in RStudio: http://github.com/laderast/magic-of-markdown/Rmarkdow
 
 ## Shiny and Rmarkdown
 
-What's especially cool is that you can mix Shiny and Rmarkdown to produce interactive slides. 
+What's especially cool is that you can mix Shiny and Rmarkdown to produce interactive slides.
 
 You can embed Shiny applications into code blocks and then run the resulting code on a Shiny server, such as the one available on church.
 
