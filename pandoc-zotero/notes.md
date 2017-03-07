@@ -12,21 +12,21 @@ Here is a reference citing a paper on Boolean Networks.[@anderson_boolean_2016]
 
 ## The Setup Steps:
 
-1) Install Zotero and build your library using the web plugin.
-2) Install BetterBibTex for Zotero.
-3) Install pandoc if you haven't already.
-4) Configure Zotero's export format. From **Preferences >> Export** choose "BetterBibTex Quick Copy"
-5) Under **Preferences >> BetterBibTex** - change quick copy format to "Pandoc" and check the "Surround Pandoc citations with brackets" checkbox.
-6) Export all your references to a .bib file. Right-click on your library and choose "Export Library". Make sure to export it into "BetterBibTex" format. You can export your entire library, or a separate folder. Clicking "Keep Updated" will keep this file up to date as you add more references. If your references are in a separate collection, you can right-click that folder and use "Export Collection". I keep mine in my Box folder in a "zotero" folder so it is easily accessible.
-7) Find your Citation Style Language file for your journal and save it to an easily accessible location. I do the same as step 6 for my CSL files.
+  1) Install Zotero and build your library using the web plugin.
+  2) Install BetterBibTex for Zotero.
+  3) Install pandoc if you haven't already.
+  4) Configure Zotero's export format. From **Preferences >> Export** choose "BetterBibTex Quick Copy"
+  5) Under **Preferences >> BetterBibTex** - change quick copy format to "Pandoc" and check the "Surround Pandoc citations with brackets" checkbox.
+  6) Export all your references to a .bib file. Right-click on your library and choose "Export Library". Make sure to export it into "BetterBibTex" format. You can export your entire library, or a separate folder. Clicking "Keep Updated" will keep this file up to date as you add more references. If your references are in a separate collection, you can right-click that folder and use "Export Collection". I keep mine in my Box folder in a "zotero" folder so it is easily accessible.
+  7) Find your Citation Style Language file for your journal and save it to an easily accessible location. I do the same as step 6 for my CSL files.
 
 ## When you're ready to cite stuff in a Markdown file:
 
 Okay, that was a little bit of setup. But you only have to do it once! Once you have your .bib file setup and updated, the rest is a snap.
 
-8) Export your references as a .bib file.
-9) Copy your citation tags into your markdown file by selecting an entry in Zotero and using CMD + Shift + C (Mac) or Ctrl + Shift + C (Windows/Linux).
-10) Run Pandoc to process your citations using the `--filter pandoc-citeproc` flag. Here we output `notes.md` to `notes.docx` in the same directory, with our .bib file and .csl files in the same directory:
+  8) Export your references as a .bib file.
+  9) Copy your citation tags into your markdown file by selecting an entry in Zotero and using CMD + Shift + C (Mac) or Ctrl + Shift + C (Windows/Linux).
+  10) Run Pandoc to process your citations using the `--filter pandoc-citeproc` flag. Here we output `notes.md` to `notes.docx` in the same directory, with our .bib file and .csl files in the same directory:
 
 `pandoc --filter pandoc-citeproc notes.md -o notes.docx --bibliography=notes.bib --csl=test.csl`
 
