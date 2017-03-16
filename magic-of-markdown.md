@@ -2,7 +2,8 @@
 title: "The Magic of Markdown"
 author: "Ted Laderas (laderast@ohsu.edu)"
 date: "March 16, 2016"
-output: slidy_presentation
+output:
+  slidy_presentation: default
 ---
 
 ## Introduction
