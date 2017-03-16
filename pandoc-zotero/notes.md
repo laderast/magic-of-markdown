@@ -10,6 +10,8 @@ This is a short help file describing how to get the Zotero reference manager wit
 Here is one reference citing the Reactome Project.[@fabregat_reactome_2016-1]
 Here is a reference citing a paper on Boolean Networks.[@anderson_boolean_2016]
 
+Flux Balance Analysis[@orth_what_2010]
+
 ## The Setup Steps:
 
 1) Install Zotero and build your library using the web plugin.
@@ -57,7 +59,7 @@ The easiest way to make this work is to alter the YAML for your .Rmd document wi
   - Zotero: https://www.zotero.org
   - Better BibTex Installation: https://github.com/retorquere/zotero-better-bibtex/wiki/Installation
   - This page helped me set up Zotero to work with pandoc: http://verifyandrepair.com/04-13-2016/citations-export-preview/
-  - This is a page for Citation Style Language (CSL) files: http://citationstyles.org
+  - This is a page for Citation Style Language (CSL) files: https://www.zotero.org/styles
   - Markdown for Manuscripts: https://github.com/djhocking/Markdown-for-Manuscripts
 
 References

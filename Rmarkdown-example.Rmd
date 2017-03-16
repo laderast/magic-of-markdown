@@ -2,7 +2,9 @@
 title: "Rmarkdown example"
 author: "Ted Laderas"
 date: "January 14, 2016"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 This is an example Rmarkdown report. Open this file up in RStudio and try using different versions of the "Knit" command in the tool bar. 
