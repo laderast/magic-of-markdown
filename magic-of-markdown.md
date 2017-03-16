@@ -1,8 +1,8 @@
 ---
 title: "The Magic of Markdown"
 author: "Ted Laderas (laderast@ohsu.edu)"
-date: "January 13, 2016"
-output: beamer_presentation
+date: "March 16, 2016"
+output: slidy_presentation
 ---
 
 ## Introduction
@@ -10,11 +10,17 @@ output: beamer_presentation
 - What is Markdown?
     - Simple Intro
 - Pandoc
+    - Basics of pandoc
+    - Getting References to Work
 - Rmarkdown
     - PDFs
     - Interactive Slides
 - GitHub Pages
     - Jekyll
+
+## Where are These Slides?
+
+https://github.com/laderast/magic-of-markdown
 
 ## What is Markdown?
 
@@ -32,19 +38,29 @@ GitHub also uses their own flavor of Markdown (called GitHub markdown) as the ma
 
 A variation of GitHub markdown is Rmarkdown, which is Markdown + R. Rmarkdown is really useful for reproducible analyses, and it can also be used in conjunction with Shiny to make interactive slides.
 
-## Markdown Basics
+## Follow Along!
+
+Go to this Hackmd.io page (http://bit.ly/2lZP9Ww) to play around with a group edited markdown file (click on the pencil to edit). 
+
+Have fun, (but be SFW)!
+
+## Markdown Basics (Formatting)
 
 When in doubt, look at this quick [markdown cheat sheet](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf) that covers both plain markdown and GitHub Markdown.
 
 `*Italicise your text*`
+
 `_Italicise your text_`
 
 *Italicise your text*
 
 `**Bold your text**`
+
 `__Bold your text__`
 
 **Bold your text**
+
+## Markdown Basics (Bullets)
 
 ```
  * Will add bullets
@@ -55,15 +71,15 @@ When in doubt, look at this quick [markdown cheat sheet](https://enterprise.gith
     * Another Depth
 
 ```
-1. Numbered Lists
-2. Another Number
+1.  Numbered Lists
+2.  Another Number
 ```   
 
-1. Numbered Lists
-2. Another Number
+1.  Numbered Lists
+  2. Another Number
 
 
-## More Markdown
+## Markdown Basics (Links and Images)
 
 `Links are automatically generated for URLs: http://yahoo.com`
 http://yahoo.com
@@ -75,6 +91,8 @@ http://yahoo.com
 `![Add an Image](images/giphy.gif)`
 
 ![Image](images/giphy.gif)
+
+## Markdown Basics (Code Formatting)
 
 Use three backticks \`\`\` to enclose a code block:
 
@@ -95,6 +113,8 @@ for(i in 1:5){
 
 Use a single backtick \` to enclose `in-line code`
 
+## Markdown Basics (Blockquotes and Escape Characters)
+
 Use \> for blockquotes:
 
 ```
@@ -112,6 +132,16 @@ Example: \` \* \#
 ```
 
 Example: \` \* \#
+
+## The dirty secret about Markdown
+
+You can easily mix Markdown with HTML. For example, if you wanted to control the placement and size of an image, you can use the `<img>` tag to control the formatting. 
+
+## Let's try it out!
+
+Go to this Hackmd.io page (http://bit.ly/2lZP9Ww) to play around with a markdown file (click on the pencil to edit). 
+
+Have fun, (but be SFW)!
 
 ## Pandoc
 
@@ -136,7 +166,6 @@ pandoc -f markdown -t latex input.md -o output.pdf
   * -t = "to" format
   * -o specify output file name. Here, we use "output.pdf"
 
-
 Here we output an HTML file:
 
 ```
@@ -145,7 +174,8 @@ pandoc input.md -f markdown -o output.html
 Note that the default output is html so we don't need to specify the -t flag here.
 
 
-Here we output a PDF file via LaTeX:
+Here we output a PDF file via LaTeX 
+(this won't work unless you have LaTeX installed)
 
 ```
 pandoc input.md -f markdown -t latex -o output.pdf
@@ -174,13 +204,13 @@ YAML* is another way of providing Pandoc the necessary metadata it needs (output
 
 You add YAML as a header to the document by specifiying three dashes: `---`
 
-Here's the YAML that I used for this set of slides.
+Here's the YAML that I used for this set of slides. I suggest that you use a [YAML Linter such as YAMLLint](http://www.yamllint.com) to check that you formatted your YAML correctly, since it's a picky format (improperly placed colons can break it).
 
 ```
 ---
 title: "The Magic of Markdown"
 author: "Ted Laderas"
-date: "January 13, 2016"
+date: "March 16, 2017"
 output: slidy_presentation
 ---
 ```
@@ -195,7 +225,15 @@ If you're not satisfied with the default look of the output, you can customize t
 
 ## Markdown and LaTeX
 
-What about equations and all the other jazz? You can integrate LaTeX equations into your code no problem. I don't have time to go through it, but here are some tutorials.
+What about equations and all the other jazz? 
+
+`$$ \frac{1}{n} \sum_{i=1}^{n} x_{i} $$`
+
+$$ \frac{1}{n} \sum_{i=1}^{n} x_{i} $$
+
+You can integrate LaTeX equations into your code, no problem. 
+
+I don't have time to go through it, but here are some tutorials.
 
 * [Integrating Markdown and LaTeX](http://kesdev.com/you-got-latex-in-my-markdown/)
 * [How to Write a dissertation in LaTeX using markdown](http://linguisticmystic.com/2015/03/04/how-to-write-a-dissertation-in-latex-using-markdown/)
@@ -206,15 +244,25 @@ Markdown works well with Zotero, using the pandoc-citeproc extension: https://gi
 
 I've written a tiny example with installation instructions here: [Using Zotero with Pandoc](pandoc-zotero/notes.md)
 
-## Rmarkdown
+I think there is a workflow for Mendeley as well, but I haven't used it yet.
+
+## RMarkdown
 
 [Rmarkdown](http://rmarkdown.rstudio.com) is an R-specific version of GitHub markdown (Technically it's based on sundown, but who cares.).  
 
-It's used a lot in making analyses and reports reproducible. It allows for Markdown formatting mixed with R analysis. For this reason, it's ideal for sharing complex analyses with other people.
+It's used a lot in making analyses and reports reproducible. It allows for Markdown formatting mixed with R analysis code. For this reason, it's ideal for sharing complex analyses with other people.
 
-Rmarkdown is translatable to PDF (via LaTeX), to PDF slides, HTML reports, and HTML slides within RStudio.
+RMarkdown is translatable to PDF (via LaTeX), to PDF slides, HTML reports, and HTML slides within RStudio.
 
 RStudio has pandoc built in for this purpose.
+
+## Before you start
+
+Make sure that your R has the `knitr` package installed. 
+
+```
+install.packages(knitr)
+```
 
 ## Rmarkdown Example
 
@@ -237,9 +285,11 @@ We've already seen the `eval=TRUE` option for the R codeblock. But [there are lo
 
 ## Rstudio and Pandoc
 
-RStudio actually has pandoc built in, with a limited set of options. If you want your markdown to execute code, you will have to use this version of pandoc. I usually just use Rstudio's "Knit" option to translate my documents.
+RStudio actually has pandoc built in, with a limited set of options. If you want your markdown to execute code, you will have to use this version of pandoc. I usually just use Rstudio's "Knit" option to translate my documents. 
 
-You can also use the following command to render a document. Make sure your YAML specifies the options you want (i.e. PDF, html_output). Note that to output PDF filese, you will have to install LaTeX on your system.
+If you have set your YAML correctly at the beginning of the file, pandoc will also process your references as well.
+
+You can also use the following command to render a document. Make sure your YAML specifies the options you want (i.e. PDF, html_output). Note that to output PDF files, you will have to install LaTeX on your system.
 
 `rmarkdown::render("input.Rmd")`
 
@@ -255,14 +305,13 @@ You can embed Shiny applications into code blocks and then run the resulting cod
 
 I'm experimenting with this here: http://church.ohsu.edu:3838/laderast/clusteringLecture/
 
-
 ## GitHub Pages
 
-A nice use of Markdown is for authoring websites. You can do this with GitHub pages.
+Another nice use of Markdown is for authoring websites. You can do this really easily with GitHub pages.
 
 GitHub Pages uses an HTML translation engine called *Jekyll*, which is written in Ruby to translate Markdown into HTML. You don't really need to know about it, unless you want to use the templating in Jekyll to build something like a blog.
 
-The one benefit to using Jekyll is that it's a relatively lightweight way to manage a blog without a more complicated, database-using, content management system. Because of this, it's relatively portable and you can easily take your documents with you if you decide to migrate to another system.
+One benefit to using Jekyll is that it's a relatively lightweight way to manage a blog without a more complicated, database-using, content management system. Because of this, it's relatively portable and you can easily take your documents with you if you decide to migrate to another system.
 
 ## Markdown and GitHub pages
 
@@ -289,8 +338,12 @@ You can download Jekyll by itself to see how it transforms markdown files, but t
 
 ## For More Info
 
-This document: http://github.com/laderast/magic-of-markdown/
-Pandoc user guide: http://pandoc.org/README.html
-Rmarkdown: http://rmarkdown.rstudio.com
-Rmarkdown and Shiny: http://rmarkdown.rstudio.com/authoring_shiny_widgets.html
-GitHub Pages: https://pages.github.com
+  * This document: http://github.com/laderast/magic-of-markdown/
+  * Pandoc user guide: http://pandoc.org/README.html
+  * Pandoc and Zotero: [pandoc-zotero/notes.md](pandoc-zotero/notes.md)
+  * Rmarkdown: http://rmarkdown.rstudio.com
+  * Rmarkdown and Shiny: http://rmarkdown.rstudio.com/authoring_shiny_widgets.html
+  * GitHub Pages: https://pages.github.com
+  * Bookdown: https://bookdown.org/yihui/bookdown/
+  * Markdown Template for PhD Thesis: https://github.com/tompollard/phd_thesis_markdown
+

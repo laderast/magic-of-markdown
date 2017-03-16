@@ -24,7 +24,7 @@ Note that objects that you create in one codeblock persist to the next:
 table(Spec)
 ```
 
-Here's an example of displaying tables. You can import the the knitr library and use the kable function to make your tables look prettier.
+Here's an example of displaying tables. You can import the the `knitr` library and use the `kable()` function to make your tables look prettier.
 
 ```{r}
 #standard formatting of table

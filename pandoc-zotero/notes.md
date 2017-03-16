@@ -13,7 +13,7 @@ Here is a reference citing a paper on Boolean Networks.[@anderson_boolean_2016]
 ## The Setup Steps:
 
 1) Install Zotero and build your library using the web plugin.
-2) Install BetterBibTex for Zotero.
+2) Install BetterBibTex for Zotero: https://github.com/retorquere/zotero-better-bibtex/wiki/Installation
 3) Install pandoc if you haven't already.
 4) Configure Zotero's export format. From **Preferences >> Export** choose "BetterBibTex Quick Copy"
 5) Under **Preferences >> BetterBibTex** - change quick copy format to "Pandoc" and check the "Surround Pandoc citations with brackets" checkbox.
@@ -48,9 +48,17 @@ Once we have that set up we can just run pandoc using the following command:
 pandoc --filter pandoc-citeproc notes.md -o notes.docx
 ```
 
+## Rmarkdown and Pandoc
+
+The easiest way to make this work is to alter the YAML for your .Rmd document with the same `bibliography` and `csl` entries. More info here: http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+
 ## For more help
 
-Zotero: https://www.zotero.org
-Better BibTex Installation: https://github.com/retorquere/zotero-better-bibtex/wiki/Installation
-This page helped me set up Zotero to work with pandoc: http://verifyandrepair.com/04-13-2016/citations-export-preview/
-This is a page for Citation Style Language (CSL) files: http://citationstyles.org
+  - Zotero: https://www.zotero.org
+  - Better BibTex Installation: https://github.com/retorquere/zotero-better-bibtex/wiki/Installation
+  - This page helped me set up Zotero to work with pandoc: http://verifyandrepair.com/04-13-2016/citations-export-preview/
+  - This is a page for Citation Style Language (CSL) files: http://citationstyles.org
+  - Markdown for Manuscripts: https://github.com/djhocking/Markdown-for-Manuscripts
+
+References
+=============
