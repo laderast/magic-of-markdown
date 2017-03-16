@@ -33,7 +33,7 @@ Okay, that was a little bit of setup. But you only have to do it once! Once you 
 
 ## Optional: Setting up a small YAML entry to simplify the conversion process.
 
-Optionally, you can configure the location of your .bib and .csl files by adding a small YAML entry at the beginning of your Markdown document. This makes running pandoc a little easier.
+Optionally, you can configure the location of your .bib and .csl files by adding a small YAML entry at the beginning of your Markdown document. This makes running pandoc a little easier. Also, the citations can be processed within the Rstudio version of pandoc. 
 
 ```
 ---
