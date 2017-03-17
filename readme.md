@@ -1,4 +1,4 @@
-#The Magic of Markdown
+# The Magic of Markdown
 
 This is a simple tutorial on how to use markdown in three different contexts:
 
