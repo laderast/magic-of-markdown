@@ -1,7 +1,7 @@
 ---
 title: "The Magic of Markdown"
 author: "Ted Laderas (laderast@ohsu.edu)"
-date: "March 16, 2016"
+date: "October 27, 2017"
 output:
   slidy_presentation: default
 ---
@@ -21,7 +21,7 @@ output:
 
 ## Where are These Slides?
 
-https://github.com/laderast/magic-of-markdown
+https://laderast.github.io/magic-of-markdown
 
 ## What is Markdown?
 
@@ -157,9 +157,20 @@ Have fun, (but be SFW)!
   * LibreOffice format
   * Many more!
 
-## Using Pandoc
+## Pandoc Demo in RStudio
 
- Invoking Pandoc is done on the command line, but it's easy to do:
+Pandoc is built into [Rstudio](https://www.rstudio.com), which makes it very handy to convert files. 
+
+By default you can make the following documents:
+    + HTML documents
+    + Word documents
+    + Presentations
+        + slidy
+        + ioslides
+
+## Using Pandoc On the Command Line
+
+If you don't want to use RStudion, you run Pandoc on the command line. This might seem intimidating, but with a little practice, you'll become an expert at it.
 ```
 pandoc -f markdown -t latex input.md -o output.pdf
 ```
@@ -189,7 +200,7 @@ Much more info and examples are here: http://pandoc.org/demos.html
 
 You can edit markdown in any text editor. However, it's worth using a markdown capable editor that at least has syntax highlighting.
 
-I currently use [Atom](https://atom.io), but Sublime and many other text editors support markdown highlighting and preview.
+I currently use [Atom](https://atom.io) and [Rstudio](https://www.rstudio.com), but Sublime and many other text editors support markdown highlighting and preview.
 
 Examples include:
 
@@ -222,7 +233,27 @@ output: slidy_presentation
 
 If you're not satisfied with the default look of the output, you can customize the different documents using various templates.
 
-[Pandoc Templates](https://github.com/kjhealy/pandoc-templates)
+These are all built into RStudio:
+
+http://rmarkdown.rstudio.com/formats.html
+
+## What about PDFs?
+
+PDFs are dependent on another piece of software called `pdflatex`. 
+
+Depending on your system, you will need to install the following.
+
+For Mac:
+    + [MacTex](http://www.tug.org/mactex/) - Large download (3.0 Gb)
+    + [BasicTex](http://www.tug.org/mactex/morepackages.html) (smaller, but need to add more packages)
+
+For PC:
+    + [Miktex](https://miktex.org/download)
+
+For Linux:
+    + `apt-get install texlive` (for Debian/Ubuntu)
+    + `yum install tetex` (for RedHat/CentOS)
+
 
 ## Markdown and LaTeX
 
@@ -249,7 +280,7 @@ I think there is a workflow for Mendeley as well, but I haven't used it yet.
 
 ## RMarkdown
 
-[Rmarkdown](http://rmarkdown.rstudio.com) is an R-specific version of GitHub markdown (Technically it's based on sundown, but who cares.).  
+[Rmarkdown](http://rmarkdown.rstudio.com) is an R-specific version of GitHub Markdown.  
 
 It's used a lot in making analyses and reports reproducible. It allows for Markdown formatting mixed with R analysis code. For this reason, it's ideal for sharing complex analyses with other people.
 
@@ -298,13 +329,15 @@ You can also use the following command to render a document. Make sure your YAML
 
 Open this file in RStudio: http://github.com/laderast/magic-of-markdown/Rmarkdown-example.Rmd
 
-## Shiny and Rmarkdown
+## `thesisdown`
 
-What's especially cool is that you can mix Shiny and Rmarkdown to produce interactive slides.
+Have you caught the Markdown bug yet? You can write a whole dissertation in it with Chester Ismay's `thesisdown` package. 
 
-You can embed Shiny applications into code blocks and then run the resulting code on a Shiny server, such as the one available on church.
+https://github.com/ismayc/thesisdown
 
-I'm experimenting with this here: http://church.ohsu.edu:3838/laderast/clusteringLecture/
+Many other variants exist, such as `beaverdown` (Oregon State University)
+
+How about an `ohsudown`?
 
 ## GitHub Pages
 
@@ -318,28 +351,17 @@ One benefit to using Jekyll is that it's a relatively lightweight way to manage 
 
 Any markdown file that has an .markdown or .md extension will automatically be processed by GitHub and served as a html. For example: https://github.com/laderast/magic-of-markdown/blob/master/magic-of-markdown.md
 
-If you want to make a webpage for your code, you need to create a branch called `gh-pages` and put the markdown files in there. I believe you can also just place html files as well.
+For more info, please refer to our [GitHub Pages tutorial](https://github.com/BioData-Club/githubPagesTutorial)
 
-## Setting Up a Personal GitHub Page
+## Blogdown
 
-If you have a GitHub account with USERNAME, you can serve a webpage directly from USERNAME.github.io. For example: http://laderast.github.io
+Allison Hill recently did a wonderful tutorial on `blogdown`, which lets you author webpages in RStudio. 
 
-You first need to create a repository with that name. Anything with index.md will be automatically translated and served as a webpage.
-
-Using Jekyll, you can add header and footers and other templating features, standardizing the look of your pages as you like.
-
-One thing to remember is when your output is html, you can embed HTML tags, which is especially useful for embedding images, since you can adjust image size directly within the tag.
-
-## Jekyll File Structure
-
-If you're interested in setting up a blog or more complicated site, you'll have to learn a little bit about Jekyll and the [liquid templating](http://jekyllrb.com/docs/templates/) language.
-
-You can download Jekyll by itself to see how it transforms markdown files, but to get started with a blog or pages, it's actually way easier to [clone Poole](https://github.com/poole/poole), which gives you the basic file structure that you can use to serve the GitHub pages.
-
+https://github.com/rstudio/blogdown
 
 ## For More Info
 
-  * This document: http://github.com/laderast/magic-of-markdown/
+  * This document: http://laderast.github.io/magic-of-markdown/
   * Pandoc user guide: http://pandoc.org/README.html
   * Pandoc and Zotero: [pandoc-zotero/notes.md](pandoc-zotero/notes.md)
   * Rmarkdown: http://rmarkdown.rstudio.com
