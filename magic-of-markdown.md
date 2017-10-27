@@ -163,11 +163,11 @@ Pandoc is built into [Rstudio](https://www.rstudio.com), which makes it very han
 
 By default you can make the following documents:
 
-    + HTML documents
-    + Word documents
-    + Presentations
-        + slidy
-        + ioslides
++ HTML documents
++ Word documents
++ Presentations
+    + slidy
+    + ioslides
 
 ## Using Pandoc On the Command Line
 
