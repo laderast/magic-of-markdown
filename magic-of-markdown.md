@@ -171,7 +171,10 @@ By default you can make the following documents:
 
 ## Using Pandoc On the Command Line
 
-If you don't want to use RStudion, you run Pandoc on the command line. This might seem intimidating, but with a little practice, you'll become an expert at it.
+If you don't want to use RStudio, you can run Pandoc on the command line. 
+
+This might seem intimidating, but with a little practice, you'll become an expert at it.
+
 ```
 pandoc -f markdown -t latex input.md -o output.pdf
 ```
