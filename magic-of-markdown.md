@@ -162,6 +162,7 @@ Have fun, (but be SFW)!
 Pandoc is built into [Rstudio](https://www.rstudio.com), which makes it very handy to convert files. 
 
 By default you can make the following documents:
+
     + HTML documents
     + Word documents
     + Presentations
